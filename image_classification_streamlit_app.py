@@ -22,10 +22,10 @@ def load_model():
     class_names = [name.split(',')[0] for name in image_net_names]
 
     # Load the neural network model.
-    model = cv2.dnn.readNet(
-        model='DenseNet_121.caffemodel',
-        config='DenseNet_121.prototxt',
-        framework='Caffe')
+    model = cv2.dnn.readNetFromCaffe(
+        prototxt='DenseNet_121.prototxt',
+        caffeModel='DenseNet_121.caffemodel',
+        )
     return model, class_names
 
 

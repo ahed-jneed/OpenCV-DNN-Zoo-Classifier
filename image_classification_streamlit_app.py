@@ -23,8 +23,8 @@ def load_model():
 
     # Load the neural network model.
     model = cv2.dnn.readNetFromCaffe(
-        prototxt='https://github.com/ahed-jneed/OpenCV-DNN-Zoo-Classifier/blob/main/DenseNet_121.prototxt',
-        caffeModel='https://github.com/ahed-jneed/OpenCV-DNN-Zoo-Classifier/blob/main/DenseNet_121.caffemodel',
+        prototxt='DenseNet_121.prototxt',
+        caffeModel='DenseNet_121.caffemodel',
         )
     return model, class_names
 

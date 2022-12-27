@@ -8,8 +8,6 @@ from io import BytesIO
 
 # Create application title and file uploader widget.
 st.title("OpenCV Deep Learning based Image Classification")
-img_file_buffer = st.file_uploader("Choose a file or Camera", type=['jpg', 'jpeg', 'png'])
-
 
 @st.cache(allow_output_mutation=True)
 def load_model():
@@ -66,6 +64,7 @@ def header(text):
 
 
 net, class_names = load_model()
+img_file_buffer = st.file_uploader("Choose a file or Camera", type=['jpg', 'jpeg', 'png'])
 
 st.text('OR')
 url = st.text_input('Enter URL')

@@ -9,6 +9,7 @@ from io import BytesIO
 # Create application title and file uploader widget.
 st.title("OpenCV Deep Learning based Image Classification")
 
+
 @st.cache(allow_output_mutation=True)
 def load_model():
     """Loads the DNN model."""
@@ -21,7 +22,7 @@ def load_model():
     class_names = [name.split(',')[0] for name in image_net_names]
 
     # Load the neural network model.
-    model = cv2.dnn.readNetFromCaffe('DenseNet_121.prototxt','DenseNet_121.caffemodel')
+    model = cv2.dnn.readNetFromCaffe('DenseNet_121.prototxt', 'DenseNet_121.caffemodel')
     return model, class_names
 
 
@@ -64,8 +65,8 @@ def header(text):
 
 
 net, class_names = load_model()
-img_file_buffer = st.file_uploader("Choose a file or Camera", type=['jpg', 'jpeg', 'png'])
 
+img_file_buffer = st.file_uploader("Choose a file or Camera", type=['jpg', 'jpeg', 'png'])
 st.text('OR')
 url = st.text_input('Enter URL')
 
